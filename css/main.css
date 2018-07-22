@@ -285,3 +285,12 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+/* additional text setting */
+.text-position > h1 {
+    margin-top: 2em;
+    margin-left: 2em;
+    font-size: 7vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(79, 255, 190) ;
+}

@@ -1,28 +1,24 @@
-// Star[] stars = new Star[800]
-
-
-function setup() {
-    createCanvas(windowWidth, 600, WEBGL);
-}
-
-function draw() {
-    background(234, 130, 255);
-    // 3d sphere
-    translate(240, 0, 0);
-    push();
-    rotateZ(frameCount * 0.01);
-    rotateX(frameCount * 0.01);
+function setup(){
+    createCanvas(windowWidth, 400, WEBGL);
+  }
+  
+  function draw(){
+    background(250);
     rotateY(frameCount * 0.01);
-    sphere(100);
-    pop();
-    // text
-    textSize(32);
-    text('Hello New P5Js Boilerplate', 200, 300);
-    fill(0, 102, 153);
-    // text("put your p5.js code here",10, frameCount % height);
-}
+  
+    for(var j = 0; j < 5; j++){
+      push();
+      for(var i = 0; i < 60; i++){
+        translate(sin(frameCount * 0.001 + j) * 100, sin(frameCount * 0.001 + j) * 100, i * 0.1);
+        rotateZ(frameCount * 0.002);
+        push();
+        sphere(10, 6, 4); 
+        pop();
+      }
+      pop();
+    }
+  }
 
-
-function windowResized() {
-    resizeCanvas(windowWidth, 600);
-}
+  function windowResized() {
+      resizeCanvas(windowWidth, 400, WEBGL);
+  }
